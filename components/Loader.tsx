@@ -59,7 +59,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
         </div>
 
         <span className="mt-4 text-xs tracking-[0.3em] uppercase text-text-muted">
-          Josh Langsam
+          Roan Co.
         </span>
       </div>
     </motion.div>
