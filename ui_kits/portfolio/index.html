@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RoanCo / Joshua Langsam — Portfolio UI Kit</title>
+<link rel="icon" href="../../assets/favicon.svg">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  /* ==========================================================
+     PORTFOLIO UI KIT — editorial cut
+     Palette is deliberately narrow:
+       · Navy  #0B132B   — ground
+       · Ink   #060912   — deep ground
+       · Gold  #F4D06F   — display + primary warm
+       · Cream #F5EFE0   — copy / hover
+       · Magenta #FF2AC1 — accent (rare, only active / hover)
+       · Cyan  #7FD6C4   — monospace data only
+     Everything else removed. No grain. No chromatic scrollbars.
+  ========================================================== */
+  :root{
+    --ink:#060912;
+    --navy:#0B132B;
+    --navy-2:#0E1A3A;
+    --gold:#F4D06F;
+    --cream:#F5EFE0;
+    --cream-2:#EAE2D0;
+    --muted:#8A92A6;
+    --rule:rgba(245,239,224,.12);
+    --accent:#FF2AC1;
+    --data:#7FD6C4;
+  }
+  html,body{margin:0;padding:0;background:transparent;color:var(--cream);
+    font-family:var(--font-sans);overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  html{background:var(--ink)}  /* fallback if video fails */
+  *{box-sizing:border-box}
+  ::selection{background:var(--gold);color:var(--ink)}
+  a{color:inherit;text-decoration:none}
+
+  /* Backdrop placeholder slot — awaiting uploaded video/poster */
+
+  #root{position:relative;z-index:2}
+  /* Hero is the only section that lets the video show through.\n     Every other section gets a solid ink ground so scrolled content is readable. */\n  section:not([data-hero-video-host]){position:relative;background:var(--ink)}
+
+  /* Display type — single warm tone; italics in gold too.
+     No multi-color runs. Magenta reserved for hover / accent chips. */
+  h1, h2 { color:var(--cream); -webkit-text-fill-color:var(--cream); }
+  h1 em, h2 em{ color:var(--gold); -webkit-text-fill-color:var(--gold); font-style:italic }
+
+  /* Cards quieter */
+  .rk-card{background:var(--navy) !important;
+    border:1px solid var(--rule) !important}
+
+  /* Scrollbar — monochrome, almost invisible */
+  ::-webkit-scrollbar{width:6px;height:6px}
+  ::-webkit-scrollbar-track{background:transparent}
+  ::-webkit-scrollbar-thumb{background:rgba(245,239,224,.1);border-radius:3px}
+  ::-webkit-scrollbar-thumb:hover{background:rgba(245,239,224,.2)}
+
+  /* ============================================================
+     BACKDROP SLOT — uploaded video/poster takes this.
+     Photographic source or placeholder. No SVG invention.
+  ============================================================ */
+  .hero-backdrop{position:fixed;inset:0;width:100vw;height:100vh;
+    object-fit:cover;z-index:0;pointer-events:none}
+  .hero-tint{position:fixed;inset:0;z-index:1;pointer-events:none;
+    /* Darker at the bottom so body copy stays legible; lighter up top
+       so the Miami skyline + F-22 actually reads. */
+    background:linear-gradient(180deg,
+      rgba(6,9,18,.25) 0%,
+      rgba(6,9,18,.55) 45%,
+      rgba(6,9,18,.92) 100%)}
+
+  /* Touch — no hover transforms */
+  @media (hover:none) and (pointer:coarse){
+    .rk-card:hover{transform:none!important;box-shadow:none!important}
+  }
+
+  /* ---------- Brand clamp (light touch) ----------
+     Magenta IS the brand — keep it as the active accent. Just normalize
+     surrounding tokens to the editorial palette so it pops on a calm
+     ground instead of fighting cyan + gold + pink all at once. */
+  :root{
+    --text: var(--cream);
+    --text-muted: rgba(245,239,224,.65);
+    --border: rgba(245,239,224,.12);
+    --border-hover: rgba(255,42,193,.55);
+    --bg: var(--ink);
+    --bg-elevated: var(--navy);
+    /* --accent stays magenta from colors_and_type.css */
+  }
+  section{ scroll-margin-top: 96px }
+</style>
+</head>
+<body>
+
+<!-- LOCKED BACKDROP — photographic source, uploaded Apr 18 08:49 -->
+<video class="hero-backdrop"
+       autoplay muted loop playsinline
+       preload="metadata"
+       poster="hero-poster.jpg"
+       aria-hidden="true">
+  <source src="hero.webm" type="video/webm">
+  <source src="hero.mp4"  type="video/mp4">
+</video>
+<div class="hero-tint" aria-hidden="true"></div>
+
+<div id="root"></div>
+
+<script>
+/* Force-play the hero video — some browsers pause muted autoplay until
+   a user gesture; nudging play() + a one-time click fallback fixes it. */
+(function(){
+  const v = document.querySelector('.hero-backdrop');
+  if(!v) return;
+  const tryPlay = () => { const p = v.play(); if(p && p.catch) p.catch(()=>{}); };
+  tryPlay();
+  v.addEventListener('canplay', tryPlay, {once:true});
+  document.addEventListener('click', tryPlay, {once:true});
+  document.addEventListener('scroll', tryPlay, {once:true, passive:true});
+})();
+</script>
+
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="./Primitives.jsx"></script>
+<script type="text/babel" src="./ProjectRail.jsx"></script>
+<script type="text/babel" src="./HorizontalBands.jsx"></script>
+<script type="text/babel" src="./VerticalRails.jsx"></script>
+<script type="text/babel" src="./Sections.jsx"></script>
+<script type="text/babel" src="./Sections2.jsx"></script>
+
+<script type="text/babel">
+  function App(){
+    const skills = [
+      'Elixir / Phoenix', 'TypeScript / Next.js', 'React',
+      'Supabase', 'Fly.io', 'Claude', 'MCP servers',
+      'Multi-agent orchestration', 'Post-quantum', 'Python'
+    ];
+    return (
+      <>
+        <window.Nav />
+        <window.NavTicker />
+        <window.SideProgress />
+        <div style={{position:'relative'}}>
+          <window.Hero />
+          <window.Marquee items={skills} speed={52} dir="left"
+                          accent="#F4D06F" label="Capabilities" />
+          <window.Projects />
+          <window.TimelineRail />
+          <window.About />
+          <window.Research />
+          <window.Contact />
+        </div>
+      </>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
