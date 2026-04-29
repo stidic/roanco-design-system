@@ -21,33 +21,35 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Roan Co. — Save Money. Get Smarter. Look Better.",
+  title: "Roan Co. — Agentic Systems for SMBs",
   description:
-    "We help small and medium businesses save on payment processing, implement AI workflows, and build modern websites. Salt Lake City & Jupiter, FL.",
+    "We\u2019re an agentic systems company. We embed inside your business, find the workflows eating your time and money, and build AI-powered systems that solve them. Salt Lake City & Jupiter, FL.",
   keywords: [
     "Roan Co",
-    "payment processing",
+    "agentic systems",
     "AI consulting",
-    "AI workflows",
+    "AI automation",
+    "payment processing",
     "small business",
     "website development",
     "business automation",
+    "SMB technology",
   ],
   authors: [{ name: "Roan Co." }],
   creator: "Roan Co.",
   openGraph: {
-    title: "Roan Co. — Save Money. Get Smarter. Look Better.",
+    title: "Roan Co. — Agentic Systems for SMBs",
     description:
-      "We help SMBs save on payment processing, implement AI workflows, and build modern websites.",
+      "We embed inside your business, find the pain points, and build AI-powered systems that solve them.",
     type: "website",
     siteName: "Roan Co.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Roan Co. — Save Money. Get Smarter. Look Better.",
+    title: "Roan Co. — Agentic Systems for SMBs",
     description:
-      "We help SMBs save on payment processing, implement AI workflows, and build modern websites.",
+      "We embed inside your business, find the pain points, and build AI-powered systems that solve them.",
   },
   robots: {
     index: true,
@@ -78,7 +80,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Roan Co.",
               description:
-                "Payment processing, AI workflow consulting, and website development for SMBs.",
+                "Agentic systems company. Payment processing, AI workflow consulting, and custom system builds for SMBs.",
               foundingDate: "2026",
               founders: [
                 { "@type": "Person", name: "Stiles Dichter", jobTitle: "CEO" },

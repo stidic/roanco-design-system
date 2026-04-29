@@ -50,15 +50,21 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <motion.div className="mt-12 md:mt-16 max-w-xl">
+        <motion.div className="mt-12 md:mt-16 max-w-2xl">
           <motion.p className="text-sm tracking-wide text-text-muted" variants={fade} initial="hidden" animate="visible" custom={0}>
             <span className="text-accent italic font-serif text-base">It&apos;s not if, it&apos;s when.</span>
           </motion.p>
 
           <motion.p className="mt-5 text-base md:text-lg text-text-muted leading-relaxed" variants={fade} initial="hidden" animate="visible" custom={1}>
-            We save your business money on payment processing.{" "}
-            <span className="text-text">Then we show you where AI can save you 10–20 hours a week.</span>{" "}
-            And if your digital presence doesn&apos;t match the business you&apos;re building, we fix that too.
+            We&apos;re an agentic systems company. We embed inside your business, find the workflows that are
+            eating your time and money, and{" "}
+            <span className="text-text">build AI-powered systems that solve them.</span>{" "}
+            Think of it as strapping a V36 engine into your operations.
+          </motion.p>
+
+          <motion.p className="mt-3 text-base md:text-lg text-text-muted leading-relaxed" variants={fade} initial="hidden" animate="visible" custom={1.5}>
+            We start by saving you money on payment processing. Then we show you where AI can
+            give you 10–20 hours a week back. If your digital presence needs work, we fix that too.
           </motion.p>
 
           <motion.div className="mt-10 flex flex-wrap gap-4" variants={fade} initial="hidden" animate="visible" custom={2}>
@@ -66,9 +72,9 @@ export default function Hero() {
               className="inline-flex items-center bg-accent px-7 py-3.5 text-xs tracking-[0.12em] uppercase text-bg font-medium rounded-[8px] transition-all duration-300 hover:shadow-[0_8px_24px_rgba(232,115,90,0.25)] hover:scale-[1.02]">
               Get started
             </a>
-            <a href="#services"
+            <a href="#how-we-work"
               className="inline-flex items-center gap-2 border border-border px-7 py-3.5 text-xs tracking-[0.12em] uppercase text-text-muted rounded-[8px] transition-all duration-300 hover:border-border-hover hover:text-text">
-              What we do
+              How we work
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="1.5" /></svg>
             </a>
           </motion.div>
@@ -76,9 +82,9 @@ export default function Hero() {
 
         <motion.div className="mt-20 flex flex-wrap gap-8 md:gap-16" variants={fade} initial="hidden" animate="visible" custom={3}>
           {[
-            { label: "Payments", desc: "Save money" },
-            { label: "AI Workflows", desc: "Save time" },
-            { label: "Web & Brand", desc: "Look better" },
+            { label: "Payments", desc: "Save money day one" },
+            { label: "AI Systems", desc: "Automate what matters" },
+            { label: "Web & Brand", desc: "Look the part" },
           ].map((item, i) => (
             <div key={item.label} className="flex items-center gap-3">
               <span className="font-mono text-[10px] text-accent/30">0{i + 1}</span>

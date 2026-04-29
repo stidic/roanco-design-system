@@ -5,19 +5,19 @@ import Float from "./Float";
 
 const services = [
   {
-    num: "01", title: "Payment Processing", subtitle: "The Hook", color: "#E8735A",
-    description: "We access payment processing at near-cost rates through our infrastructure partnership — then pass those savings directly to you. We consistently undercut Stripe, Square, and PayPal. For a business processing $500K annually, that\u2019s thousands back in your pocket.",
+    num: "01", title: "Payment Processing", subtitle: "The Door Opener", color: "#E8735A",
+    description: "This is how we earn your trust. We access payment processing at near-cost rates and pass the savings directly to you \u2014 consistently undercutting Stripe, Square, and PayPal. For a business processing $500K annually, that\u2019s thousands back in your pocket, starting day one.",
     features: ["Rates well below Stripe\u2019s 2.9% + $0.30", "No hidden fees, no long-term contracts", "Same-day or next-day settlement", "Simple onboarding, zero disruption"],
   },
   {
-    num: "02", title: "AI Consulting", subtitle: "The Value", color: "#7EC88A",
-    description: "This is why we exist. We sit down with you, learn how your business actually runs, and show you exactly which tasks \u2014 scheduling, invoicing, follow-ups, document processing \u2014 can be automated with AI tools that exist right now. Then we implement them and train your team.",
-    features: ["Free 30-minute workflow audit", "Custom AI implementation", "Staff training included", "Ongoing optimization as AI evolves"],
+    num: "02", title: "AI Consulting & Agentic Systems", subtitle: "The Core", color: "#7EC88A",
+    description: "This is the real business. Phase 1: we embed in your company, audit your workflows, find the pain points, and train your team on AI tools. Phase 2: we build the agentic systems that solve those problems \u2014 custom AI-powered automation that runs on its own. We call it sticking a V36 in your company.",
+    features: ["Free workflow audit to start", "Claude Code tutoring and AI training", "Custom agentic system builds", "Ongoing optimization as AI evolves"],
   },
   {
     num: "03", title: "Web & Brand", subtitle: "The Extension", color: "#7EB8C8",
-    description: "If your website doesn\u2019t reflect how good your business actually is, you\u2019re leaving customers on the table. We build modern, clean websites and handle brand refreshes \u2014 the kind of online presence that actually brings in business.",
-    features: ["Modern, responsive websites", "Brand identity and refresh", "SEO-optimized from day one", "Ongoing marketing support"],
+    description: "Once we\u2019re inside your business and understand how it works, the next question is obvious: does your digital presence match the operation we\u2019re helping you build? If not, we fix it. Modern websites, clean branding, marketing that actually converts.",
+    features: ["Modern, responsive websites", "Brand identity and refresh", "SEO-optimized from day one", "Digital presence that brings in customers"],
   },
 ];
 
@@ -31,12 +31,12 @@ export default function Services() {
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8 bg-accent" />
               <span className="text-[10px] tracking-[0.3em] uppercase text-accent font-medium">
-                <span className="font-mono text-accent/30 mr-1.5">01</span>Services
+                <span className="font-mono text-accent/30 mr-1.5">01</span>What We Do
               </span>
             </div>
-            <h2 className="font-serif text-[clamp(2.2rem,5vw,4rem)] tracking-[-0.02em]">Three ways we help</h2>
-            <p className="mt-5 max-w-lg text-text-muted text-base leading-[1.7]">
-              Payments save you money. AI saves you time. A better website brings you customers. One partner for all three.
+            <h2 className="font-serif text-[clamp(2.2rem,5vw,4rem)] tracking-[-0.02em]">Three pillars. One partner.</h2>
+            <p className="mt-5 max-w-xl text-text-muted text-base leading-[1.7]">
+              Payments get us in the door. AI systems are the business. Web and brand complete the picture. Every engagement starts with saving you money and ends with transforming how you operate.
             </p>
           </FadeIn>
         </Float>

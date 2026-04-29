@@ -27,12 +27,12 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
 }
 
 const stats = [
-  { value: 50, suffix: "%", label: "Average savings on processing fees", color: "#E8735A" },
-  { value: 15, suffix: "+", label: "Hours/week saved with AI automation", color: "#7EC88A" },
-  { value: 2, suffix: "", label: "Markets with local presence", color: "#7EB8C8" },
+  { value: 50, suffix: "%", label: "Average savings on payment processing fees", color: "#E8735A" },
+  { value: 20, suffix: "+", label: "Hours/week reclaimed with agentic systems", color: "#7EC88A" },
+  { value: 2, suffix: "", label: "Markets with boots on the ground", color: "#7EB8C8" },
 ];
 
-const verticals = ["Law Firms", "Healthcare", "Accounting", "Retail", "Dental", "Auto", "Real Estate", "Restaurants"];
+const verticals = ["CPAs & Accounting", "Construction", "Law Firms", "Healthcare", "Dental", "Real Estate", "Retail", "Professional Services"];
 
 export default function Stats() {
   return (
@@ -53,7 +53,10 @@ export default function Stats() {
 
         <FadeIn delay={0.3}>
           <div className="mt-20 pt-10 border-t border-border">
-            <span className="text-[10px] tracking-[0.25em] uppercase text-text-muted/40 block mb-6">Industries we serve</span>
+            <span className="text-[10px] tracking-[0.25em] uppercase text-text-muted/40 block mb-6">Who we work with</span>
+            <p className="text-sm text-text-muted/70 mb-6 max-w-lg leading-relaxed">
+              SMBs with 1–50 employees across a wide range of verticals. We stay dynamic — the system works wherever there are workflows to automate.
+            </p>
             <div className="flex flex-wrap gap-3">
               {verticals.map((v) => (
                 <span key={v} className="border border-border px-5 py-2.5 text-xs tracking-wide text-text-muted transition-colors duration-300 hover:border-border-hover hover:text-accent rounded-[8px] cursor-default">

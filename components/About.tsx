@@ -6,13 +6,13 @@ import Float from "./Float";
 const founders = [
   {
     name: "Stiles Dichter", role: "CEO & Co-Founder", location: "Salt Lake City, UT", territory: "Mountain West",
-    description: "Leads business development, operations, and the payment processing partnership. Brings the cost-plus processing infrastructure that gives Roan Co. its pricing edge.",
-    focus: ["Business Development", "Payment Infrastructure", "Operations"],
+    description: "Leads business development, operations, and the payment processing partnership that gives Roan Co. its pricing edge. Manages client relationships and drives the company\u2019s go-to-market strategy across the Mountain West.",
+    focus: ["Business Development", "Payment Infrastructure", "Operations", "GTM Strategy"],
   },
   {
     name: "Josh Langsam", role: "CTO & Co-Founder", location: "Jupiter, FL", territory: "Southeast Florida",
-    description: "Leads client acquisition and technical delivery in Southeast Florida. Ships AI systems and builds the technology that powers our client implementations.",
-    focus: ["Technical Architecture", "AI Implementation", "Client Delivery"],
+    description: "Leads technical architecture and agentic system builds. Designs and ships the AI-powered systems that power Phase 2 engagements. Drives client acquisition and delivery across Southeast Florida.",
+    focus: ["Agentic Systems", "Technical Architecture", "AI Engineering", "Client Delivery"],
   },
 ];
 
@@ -38,22 +38,23 @@ export default function About() {
               <FadeIn delay={0.1}>
                 <h2 className="font-serif text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.1] tracking-[-0.01em]">
                   Two founders. Two markets.{" "}
-                  <span className="text-accent">One mission.</span>
+                  <span className="text-accent">One system.</span>
                 </h2>
               </FadeIn>
               <FadeIn delay={0.18}>
                 <p className="mt-10 text-base leading-[1.85] text-text-muted">
-                  Roan Co. was built on a simple observation: small businesses are
-                  overpaying for payment processing and falling behind on AI. We fix
-                  both problems — and we do it hands-on, not with generic software
-                  and a support ticket.
+                  Roan Co. is an agentic systems company. We saw the same thing happening
+                  everywhere: small businesses overpaying for payment processing and falling
+                  behind on AI while enterprise companies raced ahead. We decided to fix both
+                  problems \u2014 hands-on, embedded inside the business, not from a distance.
                 </p>
                 <p className="mt-6 text-base leading-[1.85] text-text-muted">
-                  With co-founders in{" "}
+                  Every engagement follows the same structure: earn trust by saving money on
+                  payments, then consult and diagnose in Phase 1, then build the agentic system
+                  in Phase 2. With co-founders in{" "}
                   <span className="text-text">Salt Lake City</span> and{" "}
                   <span className="text-text">Jupiter, Florida</span>, we have
                   boots on the ground in two high-density SMB markets from day one.
-                  Local relationships, national reach.
                 </p>
               </FadeIn>
             </Float>
@@ -65,14 +66,15 @@ export default function About() {
                 <div className="card p-8">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="h-px w-5 bg-accent/40" />
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-text-muted">Why Us</span>
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-text-muted">Why Roan Co.</span>
                   </div>
                   <div className="space-y-4">
                     {[
-                      "Processing at cost \u2014 pricing no one can match",
-                      "Hands-on AI implementation, not just software",
-                      "Two markets, one consistent experience",
-                      "We become your technology partner, not a vendor",
+                      "Processing at cost \u2014 pricing no one else can touch",
+                      "Phase 1 + Phase 2 contract structure \u2014 we prove value before we build",
+                      "Agentic systems, not generic software \u2014 built for your business specifically",
+                      "We embed as a partner, not a vendor \u2014 your success is our success",
+                      "Cybersecurity baked into every engagement \u2014 we keep your data safe",
                     ].map((item) => (
                       <div key={item} className="flex items-start gap-3">
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-accent/50">
