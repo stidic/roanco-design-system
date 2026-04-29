@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Roan Co. — AI systems for industries that still run on spreadsheets</title>
-<meta name="description" content="Roan Co. builds AI systems for legacy industries. Founded by Stiles Dichter and Joshua Langsam. Jupiter, FL.">
-<meta property="og:title" content="Roan Co.">
-<meta property="og:description" content="AI systems for industries that still run on spreadsheets.">
+<title>Roan Co. — Agentic Systems for SMBs</title>
+<meta name="description" content="Roan Co. is an agentic systems company. We embed inside your business, find pain points, and build AI-powered systems that solve them. Salt Lake City & Jupiter, FL.">
+<meta property="og:title" content="Roan Co. — Agentic Systems for SMBs">
+<meta property="og:description" content="We embed inside your business, find pain points, and build AI-powered systems that solve them.">
 <meta property="og:type" content="website">
 <link rel="icon" href="./assets/favicon.svg">
 <link rel="stylesheet" href="./colors_and_type.css">
@@ -142,11 +142,6 @@
 
 <script type="text/babel">
   function App(){
-    const skills = [
-      'Elixir / Phoenix', 'TypeScript / Next.js', 'React',
-      'Supabase', 'Fly.io', 'Claude', 'MCP servers',
-      'Multi-agent orchestration', 'Post-quantum', 'Python'
-    ];
     return (
       <>
         <window.Nav />
@@ -154,12 +149,9 @@
         <window.SideProgress />
         <div style={{position:'relative'}}>
           <window.Hero />
-          <window.Marquee items={skills} speed={52} dir="left"
-                          accent="#F4D06F" label="Capabilities" />
-          <window.Projects />
-          <window.TimelineRail />
+          <window.Services />
+          <window.HowWeWork />
           <window.About />
-          <window.Research />
           <window.Contact />
         </div>
       </>
