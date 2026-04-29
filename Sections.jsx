@@ -1,4 +1,4 @@
-/* Roan Co. — Nav + Hero + Services + How We Work + About
+/* Roan Co. — Nav + Hero + Services + What We Build + How We Work + About
    Loaded after Primitives.jsx; references window.* */
 const { useEffect, useRef, useState } = React;
 
@@ -19,30 +19,24 @@ window.Nav = function Nav() {
   const bg = Math.min(1, y / 100);
   const links = [
     { n: "01", l: "Services", h: "#services" },
-    { n: "02", l: "How We Work", h: "#how-we-work" },
-    { n: "03", l: "About", h: "#about" },
-    { n: "04", l: "Contact", h: "#contact" },
+    { n: "02", l: "Our Work", h: "#our-work" },
+    { n: "03", l: "How We Work", h: "#how-we-work" },
+    { n: "04", l: "About", h: "#about" },
+    { n: "05", l: "Contact", h: "#contact" },
   ];
   return (
     <>
-      <div style={{ position:"fixed", top:0, left:0, right:0, height:2, background:"var(--accent)",
-        transform:`scaleX(${p})`, transformOrigin:"left", zIndex:60 }} />
+      <div style={{ position:"fixed", top:0, left:0, right:0, height:2, background:"var(--accent)", transform:`scaleX(${p})`, transformOrigin:"left", zIndex:60 }} />
       <nav style={{ position:"fixed", top:2, left:0, right:0, zIndex:50, padding:"0 clamp(24px,5vw,96px)" }}>
-        <div style={{ position:"absolute", inset:0, background:"rgba(10,10,10,.85)",
-          backdropFilter:"blur(20px)", WebkitBackdropFilter:"blur(20px)",
-          borderBottom:"1px solid var(--border)", opacity:bg, transition:"opacity .3s" }} />
-        <div style={{ position:"relative", margin:"0 auto", maxWidth:1200,
-          display:"flex", alignItems:"center", justifyContent:"space-between", height:80 }}>
+        <div style={{ position:"absolute", inset:0, background:"rgba(10,10,10,.85)", backdropFilter:"blur(20px)", WebkitBackdropFilter:"blur(20px)", borderBottom:"1px solid var(--border)", opacity:bg, transition:"opacity .3s" }} />
+        <div style={{ position:"relative", margin:"0 auto", maxWidth:1200, display:"flex", alignItems:"center", justifyContent:"space-between", height:80 }}>
           <a href="#" style={{ fontFamily:"var(--font-serif)", fontSize:20, color:"var(--text)", textDecoration:"none", letterSpacing:".01em" }}>
             Roan<span style={{ color:"var(--accent)", fontStyle:"italic" }}>&nbsp;Co.</span>
           </a>
-          <div style={{ display:"flex", gap:40 }} className="nav-desktop">
+          <div style={{ display:"flex", gap:36 }} className="nav-desktop">
             {links.map(k => (
-              <a key={k.l} href={k.h} style={{
-                fontSize:12, letterSpacing:".12em", textTransform:"uppercase",
-                color:"var(--text-muted)", textDecoration:"none", transition:"color .3s"
-              }} onMouseEnter={e=>e.currentTarget.style.color="var(--accent)"}
-                 onMouseLeave={e=>e.currentTarget.style.color="var(--text-muted)"}>
+              <a key={k.l} href={k.h} style={{ fontSize:11, letterSpacing:".12em", textTransform:"uppercase", color:"var(--text-muted)", textDecoration:"none", transition:"color .3s" }}
+                onMouseEnter={e=>e.currentTarget.style.color="var(--accent)"} onMouseLeave={e=>e.currentTarget.style.color="var(--text-muted)"}>
                 <span style={{ fontFamily:"var(--font-mono)", color:"rgba(255,42,193,.3)", marginRight:6 }}>{k.n}</span>{k.l}
               </a>
             ))}
@@ -74,10 +68,10 @@ window.Hero = function Hero() {
         <h1 style={{ fontFamily:"var(--font-serif)", fontWeight:400, fontSize:"clamp(4rem,11.5vw,11rem)", lineHeight:.86, letterSpacing:"-.025em", margin:0, color:"var(--cream)" }}>Roan</h1>
         <h1 style={{ fontFamily:"var(--font-serif)", fontWeight:400, fontStyle:"italic", fontSize:"clamp(4rem,11.5vw,11rem)", lineHeight:.86, letterSpacing:"-.025em", margin:0, color:"var(--accent)" }}>Co.</h1>
         <p style={{ marginTop:40, maxWidth:600, fontSize:18, lineHeight:1.6, color:"rgba(245,239,224,.78)" }}>
-          We embed inside your business, find the pain points eating your time and money, and build AI-powered systems that solve them. Think of it as strapping a V36 engine into your operations.
+          We're an agentic systems company. We embed inside your business, find the pain points eating your time and money, and build AI-powered systems that solve them.
         </p>
         <p style={{ marginTop:16, maxWidth:600, fontSize:16, lineHeight:1.6, color:"rgba(245,239,224,.55)" }}>
-          We start by saving you money on payment processing. Then we show you where AI can reclaim 10–20 hours of your week.{" "}
+          Custom CRMs. Automated pipelines. Intelligent agents. We consult first, then we build.{" "}
           <span style={{ fontFamily:"var(--font-serif)", fontStyle:"italic", color:"var(--gold)" }}>It's not if, it's when.</span>
         </p>
         <div style={{ marginTop:40, display:"flex", flexWrap:"wrap", gap:14 }}>
@@ -97,14 +91,14 @@ window.Hero = function Hero() {
   );
 };
 
-/* ========== SERVICES — THREE PILLARS ========== */
+/* ========== SERVICES — THREE PILLARS (AI FIRST) ========== */
 const SERVICES = [
-  { num:"01", title:"Payment Processing", subtitle:"The Door Opener", color:"var(--gold)",
-    description:"We access processing at near-cost rates through our infrastructure partnership — then pass those savings to you. We consistently undercut Stripe, Square, and PayPal. This is how we earn your trust before anything else.",
-    features:["Rates well below Stripe's 2.9% + $0.30","No hidden fees, no long-term contracts","Same-day or next-day settlement","Simple onboarding, zero disruption"] },
-  { num:"02", title:"AI Consulting & System Builds", subtitle:"The Core", color:"var(--accent)",
-    description:"Phase 1: we embed in your company, audit operations, find pain points, and train your team on AI tools including Claude Code. Phase 2: we build the agentic system — custom AI automation that handles the repetitive work so your team can focus on what matters. Custom CRMs, automated pipelines, intelligent agents.",
+  { num:"01", title:"AI Consulting & Agentic Systems", subtitle:"The Core", color:"var(--accent)",
+    description:"This is what we do. We embed in your company, audit your operations, find the pain points, and train your team on AI tools. Then we build the agentic system — custom AI automation that runs on its own. Custom CRMs, automated pipelines, intelligent agents that handle the repetitive work so your team can focus on what actually moves the needle.",
     features:["Free workflow audit to start","AI training and Claude Code tutoring","Custom agentic system builds","Cybersecurity baked into every engagement"] },
+  { num:"02", title:"Payment Processing", subtitle:"Immediate Savings", color:"var(--gold)",
+    description:"We access processing at near-cost rates through our infrastructure partnership and pass those savings directly to you. We consistently undercut Stripe, Square, and PayPal. For a business processing $500K annually, that's thousands back in your pocket — starting day one, zero disruption.",
+    features:["Rates well below Stripe's 2.9% + $0.30","No hidden fees, no long-term contracts","Same-day or next-day settlement","Simple onboarding, zero disruption"] },
   { num:"03", title:"Web & Brand", subtitle:"The Extension", color:"var(--data)",
     description:"Once we understand your business inside and out, the next question is obvious: does your digital presence match the operation we're building? If not, we fix it. Modern websites, clean branding, marketing that converts.",
     features:["Modern, responsive websites","Brand identity and refresh","SEO-optimized from day one","Digital presence that brings in customers"] },
@@ -115,7 +109,7 @@ window.Services = function Services() {
     <section id="services" style={{ position:"relative", padding:"144px clamp(24px,5vw,96px)" }}>
       <div style={{ margin:"0 auto", maxWidth:1200 }}>
         <window.SectionHeader num="01" eyebrow="What We Do" title="Three pillars. One partner." topLine={true}
-          sub="Payments get us in the door. AI systems are the business. Web and brand complete the picture." />
+          sub="AI systems are the business. Payments save you money. Web and brand complete the picture." />
         <div style={{ marginTop:56, display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:20 }}>
           {SERVICES.map((s, i) => (
             <window.FadeIn key={s.title} delay={.08 + i * .08}>
@@ -145,19 +139,126 @@ window.Services = function Services() {
   );
 };
 
+/* ========== WHAT WE BUILD — AGENTIC CONSULTING DEEP DIVE ========== */
+const BUILDS = [
+  { name:"AI Case Management", client:"PI Law Firms", color:"var(--accent)",
+    description:"Full AI case management system for personal injury law firms. Document analysis, demand letter generation, medical record parsing, automated client intake. Replaced 4 hours/week of paperwork with 30 minutes.",
+    tech:["Document AI","Automated intake","Smart billing"], metric:"87% time saved" },
+  { name:"Tax Automation Engine", client:"CPA Firm · Boca Raton", color:"var(--gold)",
+    description:"AI-assisted tax preparation system for a CPA firm. Cloud database migration, embedded AI chatbot for client queries, automated data extraction from receipts and statements, and a full security audit of their legacy system.",
+    tech:["Anthropic API","Data extraction","Security audit"], metric:"Shipping now" },
+  { name:"eCommerce Agent", client:"Retail · Ohio", color:"var(--data)",
+    description:"Fully automated eCommerce agent. End-to-end from listing generation to fulfillment routing. The system handles product descriptions, pricing optimization, inventory sync, and order management — no human in the loop.",
+    tech:["Multi-agent","Auto-fulfillment","Listing AI"], metric:"4-week build" },
+  { name:"Custom CRM & Pipeline", client:"Wholesale Distribution", color:"var(--accent)",
+    description:"Custom CRM built for wholesale distribution operations. Route planning, order state tracking, pipeline management, and automated follow-ups. Replaced spreadsheets and sticky notes with a system that actually works.",
+    tech:["Custom CRM","Route planning","Pipeline tracking"], metric:"Internal tool" },
+];
+
+window.OurWork = function OurWork() {
+  return (
+    <section id="our-work" style={{ position:"relative", padding:"144px clamp(24px,5vw,96px)" }}>
+      <div style={{ margin:"0 auto", maxWidth:1200 }}>
+        <window.SectionHeader num="02" eyebrow="Our Work" title="What we've built." topLine={true}
+          sub="Real systems for real businesses. Every engagement starts with consulting and ends with a deployed system that runs on its own." />
+
+        {/* Trust bar */}
+        <window.FadeIn delay={.1}>
+          <div style={{ marginTop:40, background:"var(--bg-elevated)", border:"1px solid var(--border)", borderRadius:8, padding:"28px 36px", display:"flex", flexWrap:"wrap", gap:40, alignItems:"center" }}>
+            <div style={{ display:"flex", alignItems:"center", gap:12 }}>
+              <div style={{ height:1, width:20, background:"rgba(255,42,193,.4)" }} />
+              <span style={{ fontSize:10, letterSpacing:".25em", textTransform:"uppercase", color:"var(--text-muted)" }}>Why trust us</span>
+            </div>
+            {[
+              "Every system we build, we use ourselves first",
+              "Phase 1 consulting proves value before you commit to Phase 2",
+              "Cybersecurity is baked in — not bolted on",
+              "We stay embedded as partners, not vendors",
+            ].map(item => (
+              <span key={item} style={{ fontSize:12, color:"rgba(245,239,224,.5)", display:"flex", alignItems:"center", gap:8 }}>
+                <span style={{ color:"var(--accent)", fontSize:13 }}>✓</span> {item}
+              </span>
+            ))}
+          </div>
+        </window.FadeIn>
+
+        {/* Featured build */}
+        <div style={{ marginTop:48 }}>
+          <window.FadeIn delay={.15}>
+            <div style={{ background:"var(--bg-elevated)", border:"1px solid var(--border)", borderRadius:8, padding:"48px 44px", transition:"border-color .4s" }}
+              onMouseEnter={e=>e.currentTarget.style.borderColor="var(--border-hover)"} onMouseLeave={e=>e.currentTarget.style.borderColor="var(--border)"}>
+              <div style={{ display:"grid", gridTemplateColumns:"3fr 2fr", gap:48 }}>
+                <div>
+                  <div style={{ display:"flex", gap:12, marginBottom:16 }}>
+                    <span style={{ fontSize:10, letterSpacing:".2em", textTransform:"uppercase", color:"var(--accent)", fontWeight:500 }}>Featured</span>
+                    <span style={{ fontSize:10, letterSpacing:".2em", textTransform:"uppercase", color:"rgba(157,180,216,.4)" }}>{BUILDS[0].client}</span>
+                  </div>
+                  <h3 style={{ fontFamily:"var(--font-serif)", fontWeight:400, fontSize:32, letterSpacing:"-.01em", margin:0, color:"var(--cream)" }}>{BUILDS[0].name}</h3>
+                  <p style={{ marginTop:16, fontSize:15, lineHeight:1.8, color:"var(--text-muted)", maxWidth:480 }}>{BUILDS[0].description}</p>
+                  <div style={{ marginTop:24, display:"flex", flexWrap:"wrap", gap:8 }}>
+                    {BUILDS[0].tech.map(t => (
+                      <span key={t} style={{ fontSize:10, color:"rgba(157,180,216,.5)", border:"1px solid var(--border)", padding:"4px 12px", borderRadius:6 }}>{t}</span>
+                    ))}
+                  </div>
+                  <div style={{ marginTop:24 }}>
+                    <span style={{ fontFamily:"var(--font-mono)", fontSize:13, color:"var(--accent)" }}>{BUILDS[0].metric}</span>
+                  </div>
+                </div>
+                <div style={{ display:"flex", alignItems:"center" }}>
+                  <div style={{ width:"100%", aspectRatio:"4/3", borderRadius:8, background:"var(--bg)", border:"1px solid rgba(255,255,255,.04)", display:"flex", alignItems:"center", justifyContent:"center" }}>
+                    <div style={{ textAlign:"center" }}>
+                      <span style={{ fontFamily:"var(--font-serif)", fontSize:48, color:"var(--accent)", fontStyle:"italic", opacity:.3 }}>01</span>
+                      <span style={{ display:"block", marginTop:8, fontFamily:"var(--font-mono)", fontSize:11, color:"rgba(157,180,216,.3)" }}>agentic system</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </window.FadeIn>
+        </div>
+
+        {/* Other builds — grid */}
+        <div style={{ marginTop:20, display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:20 }}>
+          {BUILDS.slice(1).map((b, i) => (
+            <window.FadeIn key={b.name} delay={.2 + i * .08}>
+              <div style={{ background:"var(--bg-elevated)", border:"1px solid var(--border)", borderRadius:8, padding:"32px 28px", height:"100%", display:"flex", flexDirection:"column", transition:"border-color .4s, transform .4s" }}
+                onMouseEnter={e=>{ e.currentTarget.style.borderColor="var(--border-hover)"; e.currentTarget.style.transform="translateY(-3px)"; }}
+                onMouseLeave={e=>{ e.currentTarget.style.borderColor="var(--border)"; e.currentTarget.style.transform="translateY(0)"; }}>
+                <div style={{ display:"flex", justifyContent:"space-between", marginBottom:14 }}>
+                  <span style={{ fontSize:10, letterSpacing:".2em", textTransform:"uppercase", color:b.color, fontWeight:500 }}>{b.client}</span>
+                </div>
+                <h3 style={{ fontFamily:"var(--font-serif)", fontWeight:400, fontSize:20, margin:0, color:"var(--cream)", letterSpacing:"-.01em" }}>{b.name}</h3>
+                <p style={{ marginTop:14, fontSize:13, lineHeight:1.75, color:"var(--text-muted)", flex:1 }}>{b.description}</p>
+                <div style={{ marginTop:20, paddingTop:16, borderTop:"1px solid var(--border)", display:"flex", justifyContent:"space-between", alignItems:"center" }}>
+                  <div style={{ display:"flex", flexWrap:"wrap", gap:6 }}>
+                    {b.tech.map(t => (
+                      <span key={t} style={{ fontSize:10, color:"rgba(157,180,216,.4)", border:"1px solid var(--border)", padding:"3px 10px", borderRadius:6 }}>{t}</span>
+                    ))}
+                  </div>
+                  <span style={{ fontFamily:"var(--font-mono)", fontSize:11, color:b.color }}>{b.metric}</span>
+                </div>
+              </div>
+            </window.FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 /* ========== HOW WE WORK ========== */
 const STEPS = [
-  { num:"01", title:"We save you money", color:"var(--gold)", description:"Before we talk about AI, we prove our value. We compare your current payment processing costs against our near-cost rates, show you the exact savings, and switch you over with zero disruption.", detail:"30–50% average savings" },
-  { num:"02", title:"Phase 1 — Consult & Diagnose", color:"var(--accent)", description:"We embed inside your business. We audit every operation — scheduling, invoicing, follow-ups, client intake, data entry — and map exactly where time and money are being wasted. We train your team on AI tools and show you what's possible.", detail:"Consulting + Claude Code tutoring" },
-  { num:"03", title:"Phase 2 — Build the System", color:"var(--accent)", description:"Once we know what to fix, we build it. Custom agentic systems — AI-powered automation that handles the repetitive work. Custom CRMs, automated pipelines, intelligent agents. This is where the V36 goes in.", detail:"Custom agentic system build" },
-  { num:"04", title:"Ongoing Partnership", color:"var(--data)", description:"AI moves fast. We stay embedded as a partner, not a vendor. Monthly optimization, new capabilities as they emerge, and continuous tuning. If your website or brand needs work, we handle that too.", detail:"We grow with you" },
+  { num:"01", title:"Phase 1 — Consult & Diagnose", color:"var(--accent)", description:"We embed inside your business. We audit every operation — scheduling, invoicing, follow-ups, client intake, data entry — and map exactly where time and money are being wasted. We train your team on AI tools and show you what's possible. This is where trust gets built.", detail:"Consulting + AI training" },
+  { num:"02", title:"Phase 2 — Build the System", color:"var(--accent)", description:"Once we know what to fix, we build it. Custom agentic systems — AI-powered automation that handles the repetitive work. Custom CRMs, automated pipelines, intelligent agents. This is where the V36 goes in.", detail:"Custom agentic system build" },
+  { num:"03", title:"Payment Processing", color:"var(--gold)", description:"At any point in the engagement, we can switch your payment processing to our near-cost rates. Most clients save 30–50% compared to Stripe, Square, or PayPal. It's immediate savings with zero disruption — and it's often what gets the conversation started.", detail:"30–50% average savings" },
+  { num:"04", title:"Ongoing Partnership", color:"var(--data)", description:"AI moves fast. We stay embedded as a partner, not a vendor. Monthly optimization, new capabilities as they emerge, continuous tuning. If your website or brand needs work, we handle that too. We grow with you.", detail:"Monthly retainer" },
 ];
 
 window.HowWeWork = function HowWeWork() {
   return (
     <section id="how-we-work" style={{ position:"relative", padding:"144px clamp(24px,5vw,96px)" }}>
       <div style={{ margin:"0 auto", maxWidth:1200 }}>
-        <window.SectionHeader num="02" eyebrow="How We Work" title="Every contract has two phases."
+        <window.SectionHeader num="03" eyebrow="How We Work" title="Every contract has two phases."
           sub="Phase 1 proves value and surfaces the spec. Phase 2 builds the system." />
         <div style={{ marginTop:56, display:"flex", flexDirection:"column", gap:20 }}>
           {STEPS.map((step, i) => (
@@ -191,7 +292,7 @@ const FOUNDERS = [
   { first:"Stiles", last:"Dichter", role:"Co-founder · CEO", focus:"Sales · GTM · Ops · Payments", email:"stiles.dichter@gmail.com",
     bio:"CEO and co-founder. Stiles runs business development, client relationships, and the payment processing partnership that gives Roan Co. its pricing edge. Manages go-to-market strategy across the Mountain West from Salt Lake City." },
   { first:"Joshua", last:"Langsam", role:"Co-founder · CTO", focus:"Engineering · AI · Agentic Systems", email:"joshualangsam@gmail.com",
-    bio:"CTO and co-founder. Josh designs and ships the agentic systems that power Phase 2 engagements. Builds in Elixir/Phoenix and TypeScript/Next.js, with Claude and MCP for the intelligent bits. Drives client acquisition and delivery across Southeast Florida." },
+    bio:"CTO and co-founder. Josh designs and ships the agentic systems that power Phase 2 engagements. Builds in Elixir/Phoenix and TypeScript/Next.js, with Claude and MCP for the intelligent bits. Drives client delivery across Southeast Florida." },
 ];
 const VERTICALS = ["CPAs & Accounting","Construction","Law Firms","Healthcare","Dental","Real Estate","Retail","Professional Services"];
 
@@ -199,10 +300,10 @@ window.About = function About() {
   return (
     <section id="about" style={{ position:"relative", padding:"144px clamp(24px,5vw,96px)" }}>
       <div style={{ margin:"0 auto", maxWidth:1200 }}>
-        <window.SectionHeader num="03" eyebrow="About" title="Two operators, one system." />
+        <window.SectionHeader num="04" eyebrow="About" title="Two operators, one system." />
         <window.FadeIn delay={.1}>
           <p style={{ marginTop:24, maxWidth:760, fontSize:16, lineHeight:1.85, color:"var(--text-muted)" }}>
-            Roan Co. is an agentic systems company. We saw the same thing everywhere: small businesses overpaying for payments and falling behind on AI while enterprise raced ahead. We decided to fix both — hands-on, embedded inside the business, not from a distance.
+            Roan Co. is an agentic systems company. We saw the same thing everywhere: small businesses drowning in manual work while enterprise companies raced ahead with AI. We decided to close that gap — hands-on, embedded inside the business, building systems that actually run.
           </p>
         </window.FadeIn>
         <div style={{ marginTop:56, display:"grid", gridTemplateColumns:"1fr 1fr", gap:32 }}>
