@@ -19,8 +19,8 @@ window.Nav = function Nav() {
   const bg = Math.min(1, y / 100);
   const links = [
     { n: "01", l: "Services", h: "#services" },
-    { n: "02", l: "Our Work", h: "#our-work" },
-    { n: "03", l: "How We Work", h: "#how-we-work" },
+    { n: "02", l: "Technology", h: "#technology" },
+    { n: "03", l: "Our Work", h: "#our-work" },
     { n: "04", l: "About", h: "#about" },
     { n: "05", l: "Contact", h: "#contact" },
   ];
@@ -139,6 +139,124 @@ window.Services = function Services() {
   );
 };
 
+
+/* ========== TECHNOLOGY — POLIS STACK ========== */
+window.Technology = function Technology() {
+  var components = [
+    {
+      name: "Logos",
+      verb: "Verifies",
+      color: "var(--gold)",
+      description: "A post-quantum, formally verified programming language built for the post-AI-exploitation era. The classes of bugs that AI red-teamers exploit cannot exist in Logos by construction.",
+      details: [
+        "Elixir-feel syntax with AI-native design. Pattern matching, pipes, immutable by default, strong inferred types. AI generates correct code on the first pass.",
+        "Unhackable by construction. No unsafe, no FFI without formal contracts, information-flow typing. Every known agent-exploit class is structurally eliminated.",
+        "Quantum-proof. CRYSTALS-Kyber, Dilithium, SPHINCS+ as language primitives. RSA and ECC do not exist in the language."
+      ],
+      stat: "191/191 tests green",
+      extra: "4 published DOIs"
+    },
+    {
+      name: "Diogenes",
+      verb: "Supervises",
+      color: "var(--accent)",
+      description: "An open-source secure agent runtime built on Logos. Agent failure modes like prompt injection, key exposure, tool escalation, and audit tampering become compile-time errors instead of runtime drift.",
+      details: [
+        "Tools layer with allowlist roots, symlink guards, HTTPS-only requests, RFC1918 rejection, and tool-hop loop caps.",
+        "Signed audit chain. Dilithium-signed, hash-chained logs. Tampering any middle event fails verification instantly.",
+        "Session sealing with Kyber KEM + AES-GCM + Dilithium signing. Swapping sealed blobs on disk fails to open."
+      ],
+      stat: "29/29 tests green",
+      extra: "Pen-tested. 3 top-priority findings shipped."
+    },
+    {
+      name: "Heraclitus",
+      verb: "Reasons",
+      color: "var(--data)",
+      description: "A vertical AI agent for tax and accounting. Qwen3-30B-A3B base with 9 specialist QLoRA adapters, RAG over the Internal Revenue Code and CFR, wrapped in a deterministic verifier that re-derives every claim before the answer leaves the system.",
+      details: [
+        "Re-derivation, not retrieval. The verifier re-computes every claim from first principles: basis conservation, depreciation, IRC citations, entity elections, safe harbors.",
+        "Audit-by-construction. Every reasoning step lands in a SHA-256 hash-chained Postgres ledger. The chain is demonstrable end-to-end.",
+        "Per-tenant deployment. Client-site hardware holds raw data and runs local embedding. PII never leaves the firm. IRC §7216 compliant."
+      ],
+      stat: "589 tests green",
+      extra: "Constitutional Judge live in runtime"
+    }
+  ];
+
+  return (
+    <section id="technology" style={{ position:"relative", padding:"144px clamp(24px,5vw,96px)" }}>
+      <div style={{ margin:"0 auto", maxWidth:1200 }}>
+        <window.SectionHeader num="02" eyebrow="Technology" title="The Polis Stack." topLine={true}
+          sub="A verified, audited, reasoning runtime for AI agents. Three components. One polity. One audit truth." />
+
+        <window.FadeIn delay={.1}>
+          <div style={{ marginTop:40, background:"var(--bg-elevated)", border:"1px solid var(--border)", borderRadius:8, padding:"32px 36px", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap", gap:24 }}>
+            <div>
+              <span style={{ fontFamily:"var(--font-serif)", fontSize:32, color:"var(--accent)", fontStyle:"italic" }}>625</span>
+              <span style={{ fontSize:14, color:"var(--text-muted)", marginLeft:10 }}>of 625 tests passing. Zero failures.</span>
+            </div>
+            <div style={{ display:"flex", gap:24 }}>
+              <div style={{ textAlign:"center" }}>
+                <span style={{ fontFamily:"var(--font-mono)", fontSize:11, color:"var(--gold)", display:"block" }}>Logos</span>
+                <span style={{ fontFamily:"var(--font-mono)", fontSize:10, color:"rgba(157,180,216,.4)" }}>191/191</span>
+              </div>
+              <div style={{ textAlign:"center" }}>
+                <span style={{ fontFamily:"var(--font-mono)", fontSize:11, color:"var(--accent)", display:"block" }}>Diogenes</span>
+                <span style={{ fontFamily:"var(--font-mono)", fontSize:10, color:"rgba(157,180,216,.4)" }}>29/29</span>
+              </div>
+              <div style={{ textAlign:"center" }}>
+                <span style={{ fontFamily:"var(--font-mono)", fontSize:11, color:"var(--data)", display:"block" }}>Heraclitus</span>
+                <span style={{ fontFamily:"var(--font-mono)", fontSize:10, color:"rgba(157,180,216,.4)" }}>589 green</span>
+              </div>
+            </div>
+          </div>
+        </window.FadeIn>
+
+        <div style={{ marginTop:24, display:"flex", flexDirection:"column", gap:20 }}>
+          {components.map(function(c, i) { return (
+            <window.FadeIn key={c.name} delay={.15 + i * .08}>
+              <div style={{ background:"var(--bg-elevated)", border:"1px solid var(--border)", borderRadius:8, padding:"40px 36px", transition:"border-color .4s, transform .4s" }}
+                onMouseEnter={function(e){ e.currentTarget.style.borderColor="var(--border-hover)"; e.currentTarget.style.transform="translateY(-2px)"; }}
+                onMouseLeave={function(e){ e.currentTarget.style.borderColor="var(--border)"; e.currentTarget.style.transform="translateY(0)"; }}>
+
+                <div style={{ display:"flex", alignItems:"center", gap:16, marginBottom:20 }}>
+                  <h3 style={{ fontFamily:"var(--font-serif)", fontWeight:400, fontSize:32, margin:0, color:c.color, letterSpacing:"-.01em" }}>{c.name}</h3>
+                  <span style={{ fontFamily:"var(--font-mono)", fontSize:11, letterSpacing:".2em", textTransform:"uppercase", color:"rgba(157,180,216,.5)" }}>{c.verb}</span>
+                </div>
+
+                <p style={{ fontSize:15, lineHeight:1.8, color:"var(--text-muted)", maxWidth:700 }}>{c.description}</p>
+
+                <div style={{ marginTop:24, display:"grid", gridTemplateColumns:"1fr 1fr 1fr", gap:16 }}>
+                  {c.details.map(function(d, j) { return (
+                    <div key={j} style={{ padding:"16px 20px", border:"1px solid var(--border)", borderRadius:8 }}>
+                      <span style={{ fontSize:13, color:"rgba(245,239,224,.55)", lineHeight:1.6 }}>{d}</span>
+                    </div>
+                  ); })}
+                </div>
+
+                <div style={{ marginTop:20, display:"flex", gap:24, alignItems:"center" }}>
+                  <span style={{ fontFamily:"var(--font-mono)", fontSize:12, color:c.color }}>{c.stat}</span>
+                  <span style={{ fontSize:12, color:"rgba(157,180,216,.4)" }}>{c.extra}</span>
+                </div>
+              </div>
+            </window.FadeIn>
+          ); })}
+        </div>
+
+        <window.FadeIn delay={.4}>
+          <div style={{ marginTop:32, padding:"24px 32px", border:"1px solid var(--border)", borderRadius:8 }}>
+            <p style={{ fontSize:14, lineHeight:1.7, color:"var(--text-muted)" }}>
+              <span style={{ fontFamily:"var(--font-serif)", fontStyle:"italic", color:"var(--gold)" }}>Why "Polis"?</span>{" "}
+              Greek for city-state. The three components share a polity: one audit truth, one HMAC-signed envelope between components, one cross-language schema canonicalization. Logos verifies the language. Diogenes supervises the runtime. Heraclitus reasons in domain.
+            </p>
+          </div>
+        </window.FadeIn>
+      </div>
+    </section>
+  );
+};
+
 /* ========== WHAT WE BUILD ========== */
 window.OurWork = function OurWork() {
   var builds = [
@@ -164,7 +282,7 @@ window.OurWork = function OurWork() {
   return (
     <section id="our-work" style={{ position:"relative", padding:"144px clamp(24px,5vw,96px)" }}>
       <div style={{ margin:"0 auto", maxWidth:1200 }}>
-        <window.SectionHeader num="02" eyebrow="Our Work" title="What we have built." topLine={true}
+        <window.SectionHeader num="03" eyebrow="Our Work" title="What we have built." topLine={true}
           sub="Real systems for real businesses. Every engagement starts with consulting and ends with a deployed system." />
         <window.FadeIn delay={.1}>
           <div style={{ marginTop:40, background:"var(--bg-elevated)", border:"1px solid var(--border)", borderRadius:8, padding:"28px 36px" }}>
@@ -220,7 +338,7 @@ window.HowWeWork = function HowWeWork() {
   return (
     <section id="how-we-work" style={{ position:"relative", padding:"144px clamp(24px,5vw,96px)" }}>
       <div style={{ margin:"0 auto", maxWidth:1200 }}>
-        <window.SectionHeader num="03" eyebrow="How We Work" title="Every contract has two phases."
+        <window.SectionHeader num="" eyebrow="How We Work" title="Every contract has two phases."
           sub="Phase 1 proves value and surfaces the spec. Phase 2 builds the system." />
         <div style={{ marginTop:56, display:"flex", flexDirection:"column", gap:20 }}>
           {STEPS.map((step, i) => (

@@ -15,7 +15,7 @@ window.Contact = function Contact() {
           <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:32 }}>
             <div style={{ height:1, width:32, background:"var(--accent)" }} />
             <span style={{ fontSize:10, letterSpacing:".3em", textTransform:"uppercase", color:"var(--accent)", fontWeight:500 }}>
-              <span style={{ fontFamily:"var(--font-mono)", color:"rgba(255,42,193,.3)", marginRight:8 }}>04</span>Contact
+              <span style={{ fontFamily:"var(--font-mono)", color:"rgba(255,42,193,.3)", marginRight:8 }}>05</span>Contact
             </span>
           </div>
           <h2 style={{ fontFamily:"var(--font-serif)", fontWeight:400, margin:0,
@@ -37,7 +37,7 @@ window.Contact = function Contact() {
           <div style={{ marginTop:48, display:"grid", gridTemplateColumns:"1fr 1fr", gap:20 }}>
             {[
               { name:"Stiles Dichter", role:"CEO", loc:"Salt Lake City, UT", email:"stiles.dichter@gmail.com", phone:"(772) 801-9021" },
-              { name:"Josh Langsam", role:"CTO", loc:"Jupiter, FL", email:"joshualangsam@gmail.com" },
+              { name:"Josh Langsam", role:"CTO", loc:"Jupiter, FL", email:"joshualangsam@gmail.com", phone:"(561) 914-2975" },
             ].map(c => (
               <div key={c.name} style={{ background:"var(--bg-elevated)", border:"1px solid var(--border)", borderRadius:8, padding:"32px 28px", transition:"border-color .4s, transform .4s" }}
                 onMouseEnter={e=>{ e.currentTarget.style.borderColor="var(--border-hover)"; e.currentTarget.style.transform="translateY(-2px)"; }}
